@@ -28,18 +28,26 @@ DELIVERABLE
     This file, with your comments and your code.
 """
 
-# 1. In: Anne-Lise Tannous
-# 2. Process:
-# 3. Out:
+# 1. In: an answered given by the user 
+#2. Process: Keep asking the user to type "yes" until the correct answer
+# is entered or the maximum number of attempts is reached
+# 3. Out: A message saying if the correct answer was entered and
+# the number of attempts
 # 4. My stop condition, my attempt limit, my summary:
+# # Stop condition: The user enters "yes"
+# Attempt limit: 10 attempts
+# Summary: The program displays how many attempts were made
 
 i = 0
-while i < 10:
-    print ("This is attempt number:", i + 1)
-    i= i + 1
+answer = ""
 
-    print("This is the end of the loop. The maximum nulber of attempts has been reached.")
+while answer.strip().lower() != "yes" and i < 10:
+    answer = input("Type yes: ")
+    i = i + 1
 
-
-# Your code below
-while True: 
+if answer.strip().lower() == "yes":
+    print("Correct answer!")
+    print("Number of attempts:", i)
+else:
+    print("The maximum number of attempts has been reached.")
+    print("Number of attempts:", i)
