@@ -37,21 +37,22 @@ DELIVERABLE
 # Your code below
 list_of_numbers = [10, 9, 1, 7, 8, 6, 2, 3, 4, 5]
 
-# First order: ascending
-order_1 = sorted(list_of_numbers)
-print("Ascending order:", order_1)
+# Original order
+print("Original order:")
+print(list_of_numbers)
 
-# Second order: descending
-order_2 = sorted(list_of_numbers, reverse=True)
-print("Descending order:", order_2)
+# Ascending order
+print("Ascending order:")
+print(sorted(list_of_numbers))
 
-# Third order: reverse of the original list
-order_3 = list(reversed(list_of_numbers))
-print("Reversed original order:", order_3)
+# Descending order
+print("Descending order:")
+print(sorted(list_of_numbers, reverse=True))
 
-# Fourth order: even numbers first, then odd numbers
-order_4 = sorted(list_of_numbers, key=lambda x: x % 2)
-print("Even numbers first:", order_4)
+# Reversed order
+print("Reversed order:")
+print(list_of_numbers[::-1])
 
-# Prove that the original list has not changed
-print("Original list:", list_of_numbers)
+# Original list
+print("Original list:")
+print(list_of_numbers)
