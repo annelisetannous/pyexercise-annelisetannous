@@ -48,7 +48,7 @@ person ["occupation"]= "student"
 #the dictionary after adding the value or item 
 print("The dictionary after adding the occupation:" ,person)
 
-#rmoving the city from dictionary 
+#removing the city from dictionary 
 city= person.pop("city")
 print("The dictionary after removing the city:" ,person)
 print(" The city removed is", city)

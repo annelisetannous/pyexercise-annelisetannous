@@ -24,15 +24,19 @@ DELIVERABLE
     This file, with your comments and your code.
 """
 
-# 1. In: Tannous Anne-Lise 
-# 2. Process:
-# 3. Out:
+# 1. In: My list of numbers in 4.0
+# 2. Process: Calculate the ndouble number of list 
+# 3. Out: The position, the nulber and its double for every item
 # 4. What I compute for each item, and why it is worth showing:
-
+# I calculate the double of each number.
+# The reader can see the original number, its position and its double.
 
 # Your code below
-names = ["Alice", "Bob", "Trump", "John", "Mickey", "Wick", "Tom", "Jerry"]
-print(" The third item in the list", names [2])
+list_of_numbers = [10, 9, 1, 7, 8, 6, 2, 3, 4, 5]
 
-for name in names :
-    print ("Hello,", + name + ", How are you!")
+position = 1
+
+for number in list_of_numbers:
+    double = number * 2
+    print("Position:", position, "Number:", number, "Double:", double)
+    position = position + 1
