@@ -24,15 +24,16 @@ DELIVERABLE
     This file, with your comments and your code.
 """
 
-# 1. In:
-# 2. Process:
-# 3. Out:
-# 4. What happens when the second number is zero, and why:
+# 1. In: Two numbers
+# 2. Process: The code is summing, differenciating, multiplying and dividing the numbers
+# 3. Out: we get the results of those operations I mentioned above
+# 4. What happens when the second number is zero, and why:It is not possible so there will
+#be a message with the number because it can not be diveided by 0 
 
 
 # Your code below
-number_1=input("Enter the first number:")
-number_2=input ("Enter the second number:")
+number_1=float(input("Enter the first number:"))
+number_2=float(input ("Enter the second number:"))
 
 # adding the two numbers
 sum= number_1 + number_2
@@ -51,7 +52,7 @@ print("The product of the two number is:",product)
 division =number_1 /number_2
 print("The division of two numbers is:", division) 
 
-if number_2  !=0
+if number_2 != 0:
    division = number_1 / number_2
    print("The division of two numbers is:", division)
 else:
