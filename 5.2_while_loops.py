@@ -42,5 +42,4 @@ while i < 10:
 
 
 # Your code below
-while True:
-
+while True: 
