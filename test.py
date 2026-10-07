@@ -1,0 +1,1 @@
+MISTRAL_API_KEY=mstrl_fEErxII4FtrzZKTwViCtdE1g7q7qQ7vh_0eK66L
