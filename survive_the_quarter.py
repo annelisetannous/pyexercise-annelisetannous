@@ -1,40 +1,54 @@
 # Name: Anne-Lise Tannous
-# Group letter: 
-# Group number: 
+# Group letter:
+# Group number:
+
 
 # 1. WHAT GOES IN?
-# The program reads scenarios_B.csv, separated by semicolons.
-# It contains 14 columns: Num, Situation and four columns per option.
-# Choice contains the option text. Money contains the budget change.
-# Buzz contains the reputation change. Reaction contains the feedback.
-# The changes are whole numbers and can be negative.
-# The player enters their name and chooses A, B or C.
+# I use scenarios_B.csv for my game.
+# The file has 14 columns separated by semicolons.
+# Num is the scenario number and Situation is the story.
+# For each choice, I read its text, money change, reputation change
+# and feedback. The numbers can be positive, negative or zero.
+# For example, option B uses B_Choice, B_Money, B_Buzz and B_Reaction.
+# The player provides their name and their choices during the game.
 
 # 2. WHAT HAPPENS?
-# Start with 10000 EUR and 50 reputation.
-# Shuffle the scenarios and play up to ten days.
-# Show the day, gauges, situation and options.
-# Check the player's choice and apply its changes.
-# Keep reputation at a maximum of 100.
-# Show feedback and record the move.
-# Stop immediately if either gauge reaches zero or below.
+# I start the player with 10000 EUR and 50 reputation.
+# I shuffle the scenarios so the order can change between games.
+# Each day, I show the situation, the gauges and the three choices.
+# I check the answer before updating the budget and reputation.
+# I display the feedback and keep the move in the history.
+# Reputation cannot go above 100.
+# The player loses if either gauge reaches zero or below.
+# Otherwise, the game continues until the end of day ten.
 
 # 3. WHAT COMES OUT?
-# Show the final gauges, the title and the best and worst moves.
-# Explain why the player was fired, or show their final score.
-# Append name, budget, reputation, title and date to results.csv.
+# At the end, the player sees their remaining budget and reputation.
+# If they lose, I explain which gauge caused them to be fired.
+# If they survive, I calculate their score and display their title.
+# I also show the moves with the highest and lowest reputation impacts.
+# I save one row in results.csv with the player's name, budget,
+# reputation, title and date. I keep the results of earlier games.
 
 # 4. WHAT COULD GO WRONG?
-# Invalid choice: ask again. Lowercase letters are accepted.
-# Empty name: ask again.
-# Missing file or incorrect data: show an error and stop.
-# A gauge reaches zero or below: end the game.
+# A player might type something other than A, B or C.
+# I ask again, and I also accept lowercase letters.
+# I ask again if the player leaves their name empty.
+# If the CSV cannot be opened, I show a message and stop.
+# I also stop with a message if a column or number is incorrect.
+# I check the gauges after each choice so the game ends immediately
+# when the player runs out of money or reputation.
+# If saving fails, I tell the player that the result was not saved.
+
+# MY EXTRA FEATURE: THE ALGORITHM
+# I chose the algorithm feature to add a surprise during the game.
+# On one random day, the reputation impact is doubled.
+# A positive impact becomes more helpful, but a negative one
+# becomes more damaging.gauge reaches zero or below: end the game.
 # Reputation exceeds 100: set it to 100.
 # The result cannot be saved: show an error message.
 
-# EXTRA FEATURE: THE ALGORITHM
-# On one random day, double the reputation impact.
-# I chose this feature because it adds a surprise to the game.
+
 
 
 import csv

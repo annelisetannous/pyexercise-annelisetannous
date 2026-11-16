@@ -30,9 +30,75 @@ DELIVERABLE
 """
 
 # 1. In:
+# A product name, a sales channel, and the quantity sold.
+
 # 2. Process:
+# Ask the user for each value and check that it is acceptable.
+# Product and sales channel cannot be empty.
+# Quantity must be a positive whole number.
+# If an input is invalid, ask again.
+# Append the entry to a CSV without deleting previous entries.
+# If the file is new or empty, write the header first.
+
 # 3. Out, file name and columns:
+# File: 7.0_sales_data.csv
+# Columns: product; sales_channel; quantity
+
 # 4. Why these columns, and what this file is for:
+# These columns record what was sold, where, and how many units.
+# With 200 entries, I could use Excel to calculate total quantities
+# by product and compare sales across channels.
 
 
-# Your code below
+# Import Python's built-in CSV module.
+import csv
+
+
+# Ask for a product name and reject empty input.
+product = input("Enter the product name: ").strip()
+
+while product == "":
+    print("The product name cannot be empty.")
+    product = input("Enter the product name: ").strip()
+
+
+# Ask for a sales channel and reject empty input.
+sales_channel = input("Enter the sales channel (e.g. Website): ").strip()
+
+while sales_channel == "":
+    print("The sales channel cannot be empty.")
+    sales_channel = input("Enter the sales channel: ").strip()
+
+
+# Ask for a positive whole number.
+# If conversion fails or the number is not positive, ask again.
+while True:
+    try:
+        quantity = int(input("Enter the quantity sold: "))
+
+        if quantity > 0:
+            break
+        else:
+            print("Please enter a number greater than zero.")
+
+    except ValueError:
+        print("Please enter a whole number, such as 5.")
+
+
+# Open the file in append mode to keep previous entries.
+# Append mode also creates the file if it does not exist.
+with open("7.0_sales_data.csv", "a", newline="", encoding="utf-8") as file:
+    writer = csv.writer(file, delimiter=";")
+
+    # In append mode, the position is at the end of the file.
+    # A position of zero means the file is empty.
+    if file.tell() == 0:
+        writer.writerow(["product", "sales_channel", "quantity"])
+
+    # Save one entry.
+    writer.writerow([product, sales_channel, quantity])
+
+
+print("Sales data saved successfully!")
+
+
